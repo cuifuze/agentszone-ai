@@ -19,20 +19,21 @@ const sortedTags = [...tagCounts.entries()].sort((a, b) =>
 ---
 
 <BaseLayout
-  title="话题 | Agent管理学论坛"
+  title="话题 | Agents 特区"
   description="按话题浏览AI agent管理相关文章。"
 >
-  <h1 class="mb-8 text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
+  <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
     话题
   </h1>
+  <p class="mt-2 mb-10 text-[var(--color-text-muted)]">按话题浏览相关文章</p>
   <div class="flex flex-wrap gap-3">
     {sortedTags.map(([tag, count]) => (
       <a
         href={`/tags/${tag}`}
-        class="inline-flex items-center gap-2 rounded-full bg-[var(--color-surface-alt)] border border-[var(--color-surface-border)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] hover:border-[var(--color-primary-500)] hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors"
+        class="group inline-flex items-center gap-2 rounded-md bg-[var(--color-surface-alt)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] hover:bg-[var(--color-primary-50)] hover:text-[var(--color-primary-600)] dark:hover:bg-[var(--color-primary-900)]/30 dark:hover:text-[var(--color-primary-400)] transition-colors"
       >
         {tag}
-        <span class="rounded-full bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)] px-2 py-0.5 text-xs text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)]">
+        <span class="text-xs text-[var(--color-text-muted)] group-hover:text-[var(--color-primary-500)] transition-colors">
           {count}
         </span>
       </a>

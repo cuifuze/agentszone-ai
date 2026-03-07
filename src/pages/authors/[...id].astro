@@ -29,11 +29,11 @@ const { Content } = await render(author);
 ---
 
 <BaseLayout
-  title={`${name} | Agent管理学论坛`}
+  title={`${name} | Agents 特区`}
   description={bio}
 >
-  <div class="mb-8">
-    <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
       {name}
     </h1>
     <p class="mt-2 text-lg text-[var(--color-text-secondary)]">{bio}</p>
@@ -77,15 +77,17 @@ const { Content } = await render(author);
 
   {articles.length > 0 && (
     <section>
-      <h2 class="mb-6 text-xl font-semibold text-[var(--color-text-primary)]">
+      <h2 class="mb-6 text-xs font-semibold uppercase tracking-widest text-[var(--color-text-muted)]">
         {name}的文章
       </h2>
-      <div class="space-y-6">
+      <div class="divide-y divide-[var(--color-surface-border)]">
         {articles.map((article) => (
-          <ArticleCard
-            article={article}
-            authorName={authorMap.get(article.data.author.id) ?? 'Unknown'}
-          />
+          <div class="py-2">
+            <ArticleCard
+              article={article}
+              authorName={authorMap.get(article.data.author.id) ?? 'Unknown'}
+            />
+          </div>
         ))}
       </div>
     </section>

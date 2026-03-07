@@ -6,9 +6,9 @@ export async function GET(context: APIContext) {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
 
   return rss({
-    title: 'Agent Management Forum',
+    title: 'Agents 特区',
     description:
-      'Community-driven insights on AI agent orchestration, governance, and management.',
+      '一线实践者的AI agent管理经验，从个人探索到组织级实践。',
     site: context.site!,
     items: articles
       .sort(

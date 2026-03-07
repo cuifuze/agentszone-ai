@@ -3,27 +3,44 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-[var(--color-surface-border)] bg-[var(--color-surface)]">
-  <div class="mx-auto max-w-4xl px-4 py-8">
-    <div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
-      <p class="text-sm text-[var(--color-text-muted)]">
-        &copy; {year} Agent管理学论坛
-      </p>
-      <div class="flex items-center gap-4">
-        <a
-          href="/rss.xml"
-          class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
-        >
-          RSS
-        </a>
-        <a
-          href="https://github.com/lipingtababa/agentmanagementforum"
-          class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          投稿
-        </a>
+  <div class="mx-auto max-w-5xl px-6 sm:px-8 py-16">
+    <div class="flex flex-col gap-8 sm:flex-row sm:justify-between">
+      <div class="max-w-xs">
+        <div class="flex items-center gap-2.5">
+          <div class="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--color-primary-600)] text-xs font-bold text-white">
+            A
+          </div>
+          <span class="text-lg font-bold tracking-tight text-[var(--color-text-primary)]">
+            Agents 特区
+          </span>
+        </div>
+        <p class="mt-3 text-sm text-[var(--color-text-muted)] leading-relaxed">
+          一线实践者的AI agent管理经验，从个人探索到组织级实践。
+        </p>
       </div>
+      <div class="flex gap-8 text-sm">
+        <div class="flex flex-col gap-3">
+          <a href="/articles" class="text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">文章</a>
+          <a href="/authors" class="text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">作者</a>
+          <a href="/tags" class="text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">话题</a>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="/rss.xml" class="text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors">RSS</a>
+          <a
+            href="https://github.com/lipingtababa/agentszone-ai"
+            class="text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)] transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            投稿 <span class="inline-block translate-y-[-1px] text-[10px] opacity-50">&#8599;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 border-t border-[var(--color-surface-border)] pt-6">
+      <p class="text-xs text-[var(--color-text-muted)]">
+        &copy; {year} Agents 特区
+      </p>
     </div>
   </div>
 </footer>

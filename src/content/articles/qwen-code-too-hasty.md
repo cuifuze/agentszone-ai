@@ -1,17 +1,17 @@
 ---
 title: 阿里的qwen code太草率了
-description: 阿里的qwen-code CLI是基於谷歌Gemini CLI的分叉。法律上完全沒問題，但從產品管理角度，這是個很草率的決定。用戶發現初始化命令生成的還是GEMINI.md而不是QWEN.md，這是fork時檢查不徹底的遺留。
+description: 阿里的qwen-code CLI是基于谷歌Gemini CLI的分叉。法律上完全没问题，但从产品管理角度，这是个很草率的决定。用户发现初始化命令生成的还是GEMINI.md而不是QWEN.md，这是fork时检查不彻底的遗留。
 author: magong
 date: 2025-08-09
 tags: [ai-coding, industry-analysis]
 original_url: https://mp.weixin.qq.com/s/6WJei6N398JAY2C6nZ3mUQ
 ---
 
-阿里的qwen-code CLI是基於谷歌的Gemini CLI 分叉的。後者的開源協議是非常寬鬆的 Apache 2.0，所以阿里這樣做，法律上完全沒問題。
+阿里的qwen-code CLI是基于谷歌的Gemini CLI 分叉的。后者的开源协议是非常宽松的 Apache 2.0，所以阿里这样做，法律上完全没问题。
 
-但是合規之外，還是有不少問題的。
+但是合规之外，还是有不少问题的。
 
-用戶體驗上，就有用戶反應工具的初始化命令生成的是谷歌Gemini模型需要的GEMINI.md，而不是qwen需要的QWEN.md。顯然，這是fork的時候，檢查不徹底導致的遺留。
+用户体验上，就有用户反应工具的初始化命令生成的是谷歌Gemini模型需要的GEMINI.md，而不是qwen需要的QWEN.md。显然，这是fork的时候，检查不彻底导致的遗留。
 
 > What happened?
 > While exploring the CLI, I noticed that the /init command generates a GEMINI.md file.
@@ -20,24 +20,24 @@ original_url: https://mp.weixin.qq.com/s/6WJei6N398JAY2C6nZ3mUQ
 >
 > https://github.com/QwenLM/qwen-code/issues/231
 
-在這之外，產品管理也會有比較大的挑戰。谷歌的這個項目雖然開源，但並不採用社區協作開發模式，基本不接受外部貢獻。項目貢獻榜前幾名全都是谷歌員工。這就意味著，Gemini CLI必然不會照顧非谷歌大模型的需求。
+在这之外，产品管理也会有比较大的挑战。谷歌的这个项目虽然开源，但并不采用社区协作开发模式，基本不接受外部贡献。项目贡献榜前几名全都是谷歌员工。这就意味着，Gemini CLI必然不会照顾非谷歌大模型的需求。
 
-在此前提下，qwen要麼投入同等的資源維護一個完全不相容的分叉，要麼就忍聲吞氣跟著谷歌走。後者顯然是不可接受的，而前者，就沒達到節省成本的目的。
+在此前提下，qwen要么投入同等的资源维护一个完全不兼容的分叉，要么就忍声吞气跟着谷歌走。后者显然是不可接受的，而前者，就没达到节省成本的目的。
 
-用戶們也敏銳的發現阿里團隊對qwen code不太積極維護了，他們甚至語帶嘲諷的催促中國第一CLI別停止更新。
+用户们也敏锐的发现阿里团队对qwen code不太积极维护了，他们甚至语带嘲讽的催促中国第一CLI别停止更新。
 
 ![image-1](/images/articles/qwen-code-too-hasty/1.jpg)
 
-這就涉及到第三個問題，品牌形象問題。用戶很自然的產生疑問，一個大公司把客戶端軟體建立於一個自己不可控的源頭上，是不是意味著他們資源有限無法投入，或者不重視不願意投入？
+这就涉及到第三个问题，品牌形象问题。用户很自然的产生疑问，一个大公司把客户端软件建立于一个自己不可控的源头上，是不是意味着他们资源有限无法投入，或者不重视不愿意投入？
 
-推特上這位老哥，就刻意翻出qwen code裡提到Gemini的地方，用來懟qwen的宣傳。可以看出，這位老哥並非qwen的競爭對手，他就是純粹在較真抬杠。但是他有一點說得很到位
+推特上这位老哥，就刻意翻出qwen code里提到Gemini的地方，用来怼qwen的宣传。可以看出，这位老哥并非qwen的竞争对手，他就是纯粹在较真抬杠。但是他有一点说得很到位
 
-"如果你把Gemini CLI複製成qwen code，卻連Gemini都沒清理乾淨，我不會把你的雄心當作一回事。"
+"如果你把Gemini CLI复制成qwen code，却连Gemini都没清理干净，我不会把你的雄心当作一回事。"
 
 ![image-2](/images/articles/qwen-code-too-hasty/2.jpg)
 
-其實，Gemini CLI做的很爛，issue裡全是bug report，都淹沒了feature request。谷歌的大模型在編碼領域也沒有競爭力，沒辦法把這個很挫的CLI帶成事實標準。qwen code 分叉它，相當於投胎鳳姐然後再去整容，刻意走了一道彎路。
+其实，Gemini CLI做的很烂，issue里全是bug report，都淹没了feature request。谷歌的大模型在编码领域也没有竞争力，没办法把这个很挫的CLI带成事实标准。qwen code 分叉它，相当于投胎凤姐然后再去整容，刻意走了一道弯路。
 
-總而言之，從產品管理的角度，qwen code基於Gemini CLI分叉是一個很草率的決定。導致客戶端的品質和qwen大模型的強勁競爭力不匹配。
+总而言之，从产品管理的角度，qwen code基于Gemini CLI分叉是一个很草率的决定。导致客户端的品质和qwen大模型的强劲竞争力不匹配。
 
-如果阿里確實不想自己開發客戶端（其實用上AI的話，也花不了多大的成本），幹脆贊助一個社區主導的CLI，Open Code或者 Crush 都可以，選誰都比選Gemini CLI強。
+如果阿里确实不想自己开发客户端（其实用上AI的话，也花不了多大的成本），干脆赞助一个社区主导的CLI，Open Code或者 Crush 都可以，选谁都比选Gemini CLI强。

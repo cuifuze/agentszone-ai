@@ -11,21 +11,24 @@ const { name, bio, avatar } = author.data;
 
 <a
   href={`/authors/${author.id}`}
-  class="flex items-center gap-3 rounded-lg border border-[var(--color-surface-border)] bg-[var(--color-surface)] p-4 transition-shadow hover:shadow-md"
+  class="group flex items-center gap-4 rounded-lg p-4 transition-colors hover:bg-[var(--color-surface-alt)]"
 >
   {avatar ? (
     <img
       src={avatar}
       alt={name}
-      class="h-10 w-10 rounded-full object-cover"
+      class="h-12 w-12 rounded-full object-cover ring-2 ring-[var(--color-surface-border)] group-hover:ring-[var(--color-primary-400)] transition-all"
     />
   ) : (
-    <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-100)] dark:bg-[var(--color-primary-900)] text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] font-semibold text-sm">
+    <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-primary-600)] ring-2 ring-[var(--color-surface-border)] group-hover:ring-[var(--color-primary-400)] text-white font-semibold text-sm transition-all">
       {name.charAt(0).toUpperCase()}
     </div>
   )}
   <div class="min-w-0 flex-1">
-    <p class="font-medium text-[var(--color-text-primary)] truncate">{name}</p>
-    <p class="text-sm text-[var(--color-text-muted)] truncate">{bio}</p>
+    <p class="font-medium text-[var(--color-text-primary)]">{name}</p>
+    <p class="text-sm text-[var(--color-text-muted)] line-clamp-1">{bio}</p>
   </div>
+  <svg class="h-4 w-4 text-[var(--color-text-muted)] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+  </svg>
 </a>

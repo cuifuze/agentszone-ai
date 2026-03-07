@@ -1,11 +1,13 @@
 {
-  "name": "agentmanagementforum",
+  "name": "agentszone-ai",
   "type": "module",
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint": "astro check || true",
+    "test": "echo 'No tests configured'",
     "astro": "astro"
   },
   "dependencies": {

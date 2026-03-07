@@ -7,13 +7,14 @@ const authors = await getCollection('authors');
 ---
 
 <BaseLayout
-  title="作者 | Agent管理学论坛"
+  title="作者 | Agents 特区"
   description="认识分享AI agent管理经验的一线实践者。"
 >
-  <h1 class="mb-8 text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
+  <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
     作者
   </h1>
-  <div class="grid gap-4 sm:grid-cols-2">
+  <p class="mt-2 mb-10 text-[var(--color-text-muted)]">分享AI agent管理经验的一线实践者</p>
+  <div class="grid gap-2 sm:grid-cols-2">
     {authors.map((author) => <AuthorBadge author={author} />)}
   </div>
 </BaseLayout>

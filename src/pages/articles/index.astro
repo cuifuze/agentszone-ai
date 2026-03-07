@@ -16,18 +16,21 @@ const authorMap = new Map(authors.map((a) => [a.id, a.data.name]));
 ---
 
 <BaseLayout
-  title="全部文章 | Agent管理学论坛"
+  title="全部文章 | Agents 特区"
   description="浏览所有关于AI agent管理、编排和治理的文章。"
 >
-  <h1 class="mb-8 text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
+  <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
     全部文章
   </h1>
-  <div class="space-y-6">
+  <p class="mt-2 mb-10 text-[var(--color-text-muted)]">浏览所有关于AI agent管理的文章</p>
+  <div class="divide-y divide-[var(--color-surface-border)]">
     {articles.map((article) => (
-      <ArticleCard
-        article={article}
-        authorName={authorMap.get(article.data.author.id) ?? 'Unknown'}
-      />
+      <div class="py-2">
+        <ArticleCard
+          article={article}
+          authorName={authorMap.get(article.data.author.id) ?? 'Unknown'}
+        />
+      </div>
     ))}
   </div>
 </BaseLayout>

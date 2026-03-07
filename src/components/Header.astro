@@ -11,12 +11,17 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="border-b border-[var(--color-surface-border)] bg-[var(--color-surface)]">
-  <nav class="mx-auto flex max-w-4xl items-center justify-between px-4 py-4">
-    <a href="/" class="text-xl font-bold text-[var(--color-text-primary)] hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] transition-colors">
-      Agent管理学论坛
+<header class="sticky top-0 z-50 border-b border-[var(--color-surface-border)] bg-[var(--color-surface)]/80 backdrop-blur-xl">
+  <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 sm:px-8 py-4">
+    <a href="/" class="flex items-center gap-2.5 transition-opacity hover:opacity-80">
+      <div class="flex h-7 w-7 items-center justify-center rounded-md bg-[var(--color-primary-600)] text-xs font-bold text-white">
+        A
+      </div>
+      <span class="text-lg font-bold tracking-tight text-[var(--color-text-primary)]">
+        Agents 特区
+      </span>
     </a>
-    <div class="flex items-center gap-6">
+    <div class="flex items-center gap-8">
       {navLinks.map(({ href, label, external }) => (
         <a
           href={href}
@@ -24,11 +29,11 @@ const currentPath = Astro.url.pathname;
           class:list={[
             'text-sm font-medium transition-colors',
             !external && currentPath.startsWith(href)
-              ? 'text-[var(--color-primary-600)] dark:text-[var(--color-primary-400)]'
-              : 'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]',
+              ? 'text-[var(--color-text-primary)]'
+              : 'text-[var(--color-text-muted)] hover:text-[var(--color-text-primary)]',
           ]}
         >
-          {label}
+          {label}{external && <span class="ml-0.5 inline-block translate-y-[-1px] text-[10px] opacity-50">&#8599;</span>}
         </a>
       ))}
       <ThemeToggle />

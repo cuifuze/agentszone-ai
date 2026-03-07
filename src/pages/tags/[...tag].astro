@@ -34,18 +34,21 @@ const { tag, articles, authorMap } = Astro.props;
 ---
 
 <BaseLayout
-  title={`${tag} | Agent管理学论坛`}
+  title={`${tag} | Agents 特区`}
   description={`"${tag}"相关文章。`}
 >
-  <h1 class="mb-8 text-3xl font-bold tracking-tight text-[var(--color-text-primary)]">
+  <h1 class="text-3xl font-bold tracking-tight text-[var(--color-text-primary)] sm:text-4xl">
     &ldquo;{tag}&rdquo; 相关文章
   </h1>
-  <div class="space-y-6">
+  <p class="mt-2 mb-10 text-[var(--color-text-muted)]">浏览该话题下的所有文章</p>
+  <div class="divide-y divide-[var(--color-surface-border)]">
     {articles.map((article) => (
-      <ArticleCard
-        article={article}
-        authorName={authorMap.get(article.data.author.id) ?? 'Unknown'}
-      />
+      <div class="py-2">
+        <ArticleCard
+          article={article}
+          authorName={authorMap.get(article.data.author.id) ?? 'Unknown'}
+        />
+      </div>
     ))}
   </div>
 </BaseLayout>

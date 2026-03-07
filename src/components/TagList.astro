@@ -10,7 +10,7 @@ const { tags } = Astro.props;
   {tags.map((tag) => (
     <a
       href={`/tags/${tag}`}
-      class="inline-block rounded-full bg-[var(--color-primary-50)] dark:bg-[var(--color-primary-900)]/30 px-3 py-1 text-xs font-medium text-[var(--color-primary-700)] dark:text-[var(--color-primary-300)] hover:bg-[var(--color-primary-100)] dark:hover:bg-[var(--color-primary-900)]/50 transition-colors"
+      class="inline-block rounded-md bg-[var(--color-surface-alt)] px-2.5 py-0.5 text-xs font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary-600)] dark:hover:text-[var(--color-primary-400)] hover:bg-[var(--color-primary-50)] dark:hover:bg-[var(--color-primary-900)]/30 transition-colors"
     >
       {tag}
     </a>
