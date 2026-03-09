@@ -1,9 +1,10 @@
 ---
 title: AI-Native组织转型——六个关键认知
 description: AI转型不是给旧系统打AI补丁，而是彻底重构组织DNA。核心在于：人机共生、小团队作战、价值链压缩、平台化能力、新管理模式。这六个认知，缺一个就死路一条。
-author: lixuetao
+author: li-xuetao
 date: 2026-03-09
 tags: [ai-native, org-transformation, enterprise-management]
+original_url: https://mp.weixin.qq.com/s/GK-TvwJ4BUvwL3O9kJQSBQ
 ---
 
 本文来自Agents特区第14期分享会，由优维王津银分享
